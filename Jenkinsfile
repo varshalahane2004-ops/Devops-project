@@ -1,4 +1,4 @@
-pipeline {
+ipeline {
   agent any
 
   stages {
@@ -10,14 +10,14 @@ pipeline {
 
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t flaskapp:latest .'
+        bat 'docker build -t flaskapp:latest .'
       }
     }
 
     stage('Deploy to Kubernetes') {
       steps {
-        sh 'kubectl apply -f deployment.yaml'
-        sh 'kubectl apply -f service.yaml'
+        bat 'kubectl apply -f deployment.yaml'
+        bat 'kubectl apply -f service.yaml'
       }
     }
   }
