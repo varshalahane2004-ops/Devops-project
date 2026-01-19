@@ -4,19 +4,13 @@ pipeline {
   stages {
     stage('Clone Repo') {
       steps {
-        git 'https://github.com/yourusername/devops-project.git'
+        git 'https://github.com/varshalahane2004-ops/Devops-project.git'
       }
     }
 
-    stage('Build Image') {
+    stage('Build Docker Image') {
       steps {
-        sh 'docker build -t yourdockerhubusername/flaskapp:latest .'
-      }
-    }
-
-    stage('Push Image') {
-      steps {
-        sh 'docker push yourdockerhubusername/flaskapp:latest'
+        sh 'docker build -t flaskapp:latest .'
       }
     }
 
